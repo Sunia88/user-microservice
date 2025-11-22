@@ -1,15 +1,26 @@
 spring:
   application:
     name: user-service
-  h2:
-    console:
-      enabled: true
   datasource:
-    url: jdbc:h2:mem:userdb
+    url: jdbc:postgresql://localhost:5432/userdb
+    username: admin
+    password: password123
+    driver-class-name: org.postgresql.Driver
   jpa:
+    database: POSTGRESQL
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
+
+#  h2:
+#    console:
+#      enabled: true
+#  datasource:
+#    url: jdbc:h2:mem:userdb
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: create
 
 server:
   port: 8082
